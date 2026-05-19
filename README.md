@@ -1,23 +1,56 @@
 # Scientific Literature AI Assistant
 
-A minimal multilingual RAG prototype for scientific paper analysis.
+Minimal multilingual RAG prototype for scientific paper analysis using:
+- FastAPI
+- OpenAI API
+- ChromaDB
+- semantic retrieval
+- LLM question answering
 
-This project allows users to upload a PDF paper, index its text, and ask questions about its content using a FastAPI backend, OpenAI embeddings, a ChromaDB vector database, and an OpenAI chat model.
+Live demo:
 
-## Features
+https://scientific-literature-ai-rag-assistant.onrender.com/docs
 
-- Upload and index scientific PDF papers
-- Extract text using PyMuPDF
-- Split papers into overlapping text chunks
-- Create embeddings with OpenAI embeddings
-- Store vectors locally with ChromaDB
-- Ask questions about uploaded papers
-- Retrieve relevant paper chunks
-- Generate answers using an OpenAI chat model
-- Supports English and Japanese questions/answers
-- Designed as a small portfolio project for AI/data engineering
+---
 
-## Tech Stack
+# Quick Demo
+
+1. Open `/ask`
+2. Click "Try it out"
+3. Enter a question
+4. Click "Execute"
+
+The demo automatically loads an example scientific paper at startup.
+
+---
+
+# Example Questions
+
+## English
+
+```text
+Which materials does this paper study?
+```
+
+```text
+Could you summarize the main motivation of the paper?
+```
+
+```text
+Explain the role of the effective Hamiltonian.
+```
+
+# Features
+
+- Scientific PDF analysis
+- Multilingual English/Japanese Q&A
+- Semantic retrieval (RAG)
+- OpenAI embeddings
+- Vector database search
+- FastAPI backend
+- Docker deployment
+
+# Tech Stack
 
 - Python
 - FastAPI
@@ -25,15 +58,15 @@ This project allows users to upload a PDF paper, index its text, and ask questio
 - ChromaDB
 - PyMuPDF
 - Docker
-- Uvicorn
 
-## Project Structure
+# Example Paper
 
-```text
-.
-„¥„Ÿ„Ÿ app.py
-„¥„Ÿ„Ÿ requirements.txt
-„¥„Ÿ„Ÿ Dockerfile
-„¥„Ÿ„Ÿ .gitignore
-„¥„Ÿ„Ÿ .env.example
-„¤„Ÿ„Ÿ papers/
+Jean-Baptiste MorÃ©e and Ryotaro Arita,
+"Universal chemical formula dependence of ab initio low-energy effective Hamiltonian in single-layer carrier-doped cuprate superconductors: Study using a hierarchical dependence extraction algorithm",
+Physical Review B 110, 014502 (2024).
+
+# Current Limitations
+
+- Figures/tables are not fully interpreted
+- OCR is not implemented
+- Answers are generated only from retrieved chunks
